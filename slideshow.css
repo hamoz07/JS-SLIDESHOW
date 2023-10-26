@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: monospace;
+}
+
+.slideshow-container {
+    width: 724px;
+    height: 253px;
+    position: relative;
+    margin: 10px auto;
+}
+
+.slideshow-container img {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 2.5s;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.slideshow-container img.active {
+    opacity: 1;
+}
+
+.slideshow-container span {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: rgba(5, 5, 5, .4);
+    z-index: 2;
+    padding: 10px 15px;
+    color: wheat;
+    border-radius: 15px;
+}
+
+.controler {
+    width: 724px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.controler .prev,
+.controler .next {
+    background-color: seagreen;
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 5px;
+    user-select: none;
+    width: 20%;
+}
+
+.controler .prev {
+    float: left;
+}
+
+.controler .next {
+    float: right;
+}
+
+.controler .prev.disabled,
+.controler .next.disabled {
+    background-color: rgba(46, 139, 87, 0.525);
+    cursor: no-drop;
+}
+
+.controler .indicators {
+    width: 60%;
+    float: left;
+}
+
+.controler .indicators ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+}
+
+.controler .indicators ul li {
+    display: inline-block;
+    background-color: #F6F6F6;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.controler .indicators ul li.active{
+    background-color: #009688;;
+    color: #FFF;
+}
